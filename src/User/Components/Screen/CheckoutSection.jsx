@@ -170,7 +170,7 @@ const CheckoutSection = () => {
           onClick={() => {/* place order logic */}}
           className="bg-indigo-500 text-white font-semibold py-3 px-8 rounded-xl hover:bg-indigo-600 transition-all duration-300"
         >
-          Place Order
+        {(paymentMethod === "cod")? "Place Order" : "Pay now"}  
         </button>
       </div>
     </div>

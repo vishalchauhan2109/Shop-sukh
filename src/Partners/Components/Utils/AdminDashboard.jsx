@@ -11,7 +11,7 @@ const AdminDashboard = () => {
       <div className="flex flex-wrap justify-center gap-8">
         {/* Add Items */}
         <div className="w-full sm:w-[45%] lg:w-[35%] h-60 bg-orange-400 flex flex-col items-center justify-center rounded-2xl p-4">
-          <Link to="/Additems">
+          <Link to="Partner/Additems">
             <div className="w-16 h-16 bg-green-300 flex items-center justify-center rounded-full mb-4 cursor-pointer">
               <IoMdAdd className="text-3xl text-neutral-700" />
             </div>

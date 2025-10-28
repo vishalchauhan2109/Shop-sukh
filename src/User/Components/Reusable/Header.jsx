@@ -4,6 +4,7 @@ import { FaCartPlus, FaHome } from "react-icons/fa";
 import { FaPersonRifle } from "react-icons/fa6";
 import { FiMenu, FiX } from "react-icons/fi";  // agar react-icons install hai
 import { IoCartOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,10 +45,18 @@ const Header = ({ onSearch }) => {
 
           {/* Nav links (desktop) */}
           <nav className="hidden md:flex space-x-4 ml-6">
-            <a href="#" className="text-white font-medium hover:underline"><FaHome className="text-2xl"/></a>
-            <a href="#" className="text-white font-medium hover:underline"></a>
-            <a href="#" className="text-white font-medium hover:underline"><CgProfile className="text-2xl" /></a>
-            <a href="#" className="text-white font-medium hover:underline"><IoCartOutline className="text-2xl" /></a>
+            <Link to="/User">
+            <h1 href="#" className="text-white font-medium hover:underline"><FaHome className="text-2xl"/></h1>
+            </Link>
+            <Link to="User/ProfileScreen">
+            <h1 href="#" className="text-white font-medium hover:underline"></h1>
+            </Link>
+            <Link to ="User/ProfileScreen">
+            <h1 href="#" className="text-white font-medium hover:underline"><CgProfile className="text-2xl" /></h1>
+            </Link>
+            <Link to="User/CartScreen">
+            <h1 href="#" className="text-white font-medium hover:underline"><IoCartOutline className="text-2xl" /></h1>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -82,10 +91,18 @@ const Header = ({ onSearch }) => {
               </div>
             </form>
             <nav className="px-4 space-y-2 mt-2">
-              <a href="#" className="block text-white font-medium hover:underline">Home</a>
-              <a href="#" className="block text-white font-medium hover:underline">Products</a>
-              <a href="#" className="block text-white font-medium hover:underline">Profile</a>
-              <a href="#" className="block text-white font-medium hover:underline">Cart</a>
+               <Link to="/user">
+            <h1 href="#" className="block text-white font-medium hover:underline ">Home</h1>
+            </Link>
+            <Link to="User/AboutUs">
+            <h1 href="#" className="block text-white font-medium hover:underline ">About us</h1>
+            </Link>
+            <Link to ="User/ProfileScreen">
+            <h1 href="#" className="block text-white font-medium hover:underline">Profile</h1>
+            </Link>
+            <Link to="User/CartScreen">
+            <h1 href="#" className="block text-white font-medium hover:underline ">Cart</h1>
+            </Link>
             </nav>
           </div>
         )}

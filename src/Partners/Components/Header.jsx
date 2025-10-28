@@ -25,11 +25,11 @@ const Header = () => {
 
         {/* Right side – nav links + profile icon (desktop) */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/Products" className="hover:underline">Products</Link>
-          <Link to="/About" className="hover:underline">About</Link>
-          <Link to="/MyEarnings" className="hover:underline">My Earnings</Link>
-          <Link to="/profile" className="text-2xl" aria-label="Profile">
+          <Link to="/partner" className="hover:underline">Home</Link>
+          <Link to="Partner/Products" className="hover:underline">Products</Link>
+          <Link to="Partner/About" className="hover:underline">About</Link>
+          <Link to="Partner/MyEarnings" className="hover:underline">My Earnings</Link>
+          <Link to="Partner/profile" className="text-2xl" aria-label="Profile">
             <CgProfile />
           </Link>
         </nav>
@@ -38,11 +38,11 @@ const Header = () => {
       {/* Collapsible menu for mobile */}
       {menuOpen && (
         <div className="md:hidden px-5 pb-3 space-y-3">
-          <Link to="/" className="block hover:underline">Home</Link>
-          <Link to="/Products" className="block hover:underline">Products</Link>
-          <Link to="/About" className="block hover:underline">About</Link>
-          <Link to="/MyEarnings" className="block hover:underline">My Earnings</Link>
-          <Link to="/profile" className="block text-2xl pt-2" aria-label="Profile">
+          <Link to="/partner" className="block hover:underline">Home</Link>
+          <Link to="Partner/Products" className="block hover:underline">Products</Link>
+          <Link to="Partner/About" className="block hover:underline">About</Link>
+          <Link to="Partner/MyEarnings" className="block hover:underline">My Earnings</Link>
+          <Link to="Partner/profile" className="block text-2xl pt-2" aria-label="Profile">
             <CgProfile />
           </Link>
         </div>

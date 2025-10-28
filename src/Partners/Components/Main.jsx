@@ -20,7 +20,7 @@ const Main = () => {
           <Sidebar/>
         </div>
         
-         <div className='overflow-x-hidden '>
+        <div className='overflow-x-hidden '>
         <Header/>
         {/* </RouterProvider> */}
         {/* <Footer/> */}

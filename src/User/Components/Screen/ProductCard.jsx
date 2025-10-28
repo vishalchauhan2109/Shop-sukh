@@ -1,8 +1,13 @@
 // ProductCard.jsx
 import React from "react";
-import Button from "../Utils/Button"
+// import Button from "../Utils/Button"
 
 const ProductCard = () => {
+  
+  const handleName =()=>{
+    console.log(product?.name)
+  }
+
   // Fake product details
   const product = {
     id: "P-00123",
@@ -22,9 +27,13 @@ const ProductCard = () => {
       <div className="p-4">
         <h3 className="text-lg font-bold text-neutral-600 mb-1 truncate">{product.name}</h3>
         <p className="text-sm text-neutral-500 mb-1">ID: {product.id}</p>
-        <div className="flex justify-between">
+        <div  className="flex justify-between">
             <p className="text-md font-semibold text-neutral-600 mb-1">{product.price}</p>
-            <Button label={"Add to cart"}/>
+
+            <button className="bg-indigo-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-indigo-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 active:scale-95" onClick={handleName}>
+              Add to cart
+            </button>
+            
         </div>
         <p className="text-sm text-neutral-500">Rating: {product.rating} ★</p>
       </div>
