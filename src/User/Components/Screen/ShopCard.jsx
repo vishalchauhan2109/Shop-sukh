@@ -12,13 +12,13 @@ const ShopCard = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden m-2 w-full  sm:w-80 md:w-66  transform hover:scale-105 transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden m-2 w-full  sm:w-80 md:w-56  transform hover:scale-105 transition-all duration-300">
       <img
         src={shop.image}
         alt={shop.name}
         className="w-full h-30 object-cover"
       />
-      <div className="p-4">
+      <div className="p-2">
         <h3 className="text-xl font-bold text-neutral-600 mb-2 truncate">{shop.name}</h3>
         <p className="text-sm text-neutral-500 mb-2">Address: {shop.address}</p>
         

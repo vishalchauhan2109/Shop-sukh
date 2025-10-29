@@ -16,16 +16,16 @@ const Header = ({ onSearch }) => {
   };
 
   return (
-    <header className="w-full bg-indigo-500 text-white shadow-lg ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+    <header className="w-full bg-indigo-500 text-white shadow-lg  rounded-2xl p-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-1">
+        <div className="flex justify-between items-center py-5">
           {/* Brand / Logo */}
           <div className="text-3xl font-bold transform hover:scale-105 transition-all">
             CompanyName
           </div>
 
           {/* Search Bar – hidden on very small screens */}
-          <form onSubmit={handleSubmit} className="hidden sm:flex flex-1 max-w-md ml-6">
+          <form onSubmit={handleSubmit} className="hidden sm:flex flex-1 max-w-md ">
             <div className="relative w-full">
               <input
                 type="text"

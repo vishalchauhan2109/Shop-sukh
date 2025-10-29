@@ -12,11 +12,13 @@ import Product from "../../../Partners/Components/Utils/Product";
 import ProductCard from "./ProductCard";
 import UserMainScreen from "./UserMainScreen";
 import { Outlet } from "react-router-dom";
+import MapComponent from "./MapComponent";
 
 const HomeScreen = () => {
   return (
-    <div className="">
+    <div className="p-2">
       <Header />
+     
       {/* <SelectUserorPartner/> */}
       <Outlet/>
       <Footer />
