@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {  ProductContext } from './ContextApi/ProductContext';
 import Header from './Partners/Components/Header';
 
+
 export default function SelectUserorPartner({ onSelectRole }) {
   const [role, setRole] = useState('');
   const {identity,setIdentity} = useContext(ProductContext);

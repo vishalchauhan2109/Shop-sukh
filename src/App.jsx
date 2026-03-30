@@ -22,6 +22,7 @@ import ProfileScreen from './User/Components/Screen/ProfileScreen'
 import CartScreen from './User/Components/Screen/CartScreen'
 import CheckoutSection from './User/Components/Screen/CheckoutSection'
 import AboutUs from './User/Components/Screen/Aboutus'
+import { UserLogin } from './User/Components/Screen/UserLOgin'
 
 
 
@@ -42,6 +43,18 @@ var router =  createBrowserRouter([
     path: "/",
     element: <SelectUserorPartner/>,
     },
+
+    {
+      path:"/patner/login",
+      element:<Login/>
+    },
+
+    {
+      path:"/user/login",
+      element:<UserLogin/>
+    },
+
+
 // shopkeeper wala routing
     {
       path: "/Partner",
