@@ -18,8 +18,6 @@ const HomeScreen = () => {
   return (
     <div className="p-2">
       <Header />
-     
-      {/* <SelectUserorPartner/> */}
       <Outlet/>
       <Footer />
     </div>

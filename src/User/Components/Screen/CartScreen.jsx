@@ -102,7 +102,7 @@ const CartScreen = () => {
           <p className="text-xl font-bold text-neutral-700 mb-4">
             Total: ₹ {getTotalPrice()}
           </p>
-          <Link to="User/CheckoutSection">
+          <Link to="/User/CheckoutSection">
             <button className="bg-indigo-500 text-white font-semibold py-2 px-6 rounded-xl hover:bg-indigo-600 transition-all duration-300 w-full sm:w-auto">
               Proceed to Checkout
             </button>
