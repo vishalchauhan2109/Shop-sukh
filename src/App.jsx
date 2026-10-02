@@ -33,7 +33,7 @@ import Shimmar from './User/Components/Reusable/ShimmarUi'
 
 // IMPORTANT:
 // apne actual API URL ke according rakho
-const API_BASE_URL = "http://localhost:5000"
+const API_BASE_URL = "https://shop-backend-1-894w.onrender.com/"
 
 function App() {
 
