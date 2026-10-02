@@ -18,11 +18,13 @@ export const UserLogin = () => {
     try {
       const submit = await axios.post(`${API_BASE_URL}/login`, { email, password },{withCredentials:true});
       console.log("Login successful:", submit.data);
-      dispatch(setUser(submit.data ));
+      
     
         navigate("/user");
+        return submit.data;
     }catch (error) {
   
+      dispatch(setUser(handleLogin));
   console.log("Status:", error.response?.status);
   console.log("Backend message:", error.response?.data);
   console.error("Error logging in:", error);

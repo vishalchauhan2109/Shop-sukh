@@ -23,11 +23,12 @@ import CartScreen from './User/Components/Screen/CartScreen'
 import CheckoutSection from './User/Components/Screen/CheckoutSection'
 import AboutUs from './User/Components/Screen/Aboutus'
 import { UserLogin } from './User/Components/Screen/UserLogin'
+import { setUser, logout } from './User/Components/Store/userSlice'
 
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import { useState } from 'react'
-import { setUser } from './User/Components/Store/userSlice'
+// import { setUser } from './User/Components/Store/userSlice'
 import Shimmar from './User/Components/Reusable/ShimmarUi'
 
 // IMPORTANT:
@@ -49,16 +50,13 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
   const checkAuth = async () => {
     try {
-      const response = await axios.get(
-        `${API_BASE_URL}/me`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`${API_BASE_URL}/me`, {
+        withCredentials: true,
+      });
 
-      dispatch(setUser(response?.data?.user));
+      dispatch(setUser(response?.data)); // poora response.data bhejo, .user mat nikalo
     } catch (error) {
-      // dispatch(logout());
+      dispatch(logout()); // setUser nahi, logout use karo
       console.error("Error checking authentication:", error);
     } finally {
       setLoading(false);

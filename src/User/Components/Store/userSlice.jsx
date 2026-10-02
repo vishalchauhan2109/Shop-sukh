@@ -11,15 +11,15 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isAuthenticated = true;
-    },
-    logout: (state) => {
-      state.user = null;
-      state.token = null;
-      state.isAuthenticated = false;
-    },
+  state.user = action.payload?.user ?? null;
+  state.token = action.payload?.token ?? null;
+  state.isAuthenticated = !!action.payload?.user;
+},
+logout: (state) => {
+  state.user = null;
+  state.token = null;
+  state.isAuthenticated = false;
+},
   },
 });
 

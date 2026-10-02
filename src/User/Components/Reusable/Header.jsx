@@ -1,24 +1,44 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaHome } from "react-icons/fa";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiLogOut, FiMenu, FiX } from "react-icons/fi";
 import { IoCartOutline, IoSearchOutline, IoStorefront } from "react-icons/io5";
-import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../Utils/constant";
+ import { logout } from "../Store/userSlice";
+  // import { useNavigate } from "react-redux";
 const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onSearch) onSearch(searchTerm);
   };
 
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+const handleLogout = async () => {
+  try {
+    await axios.post(`${API_BASE_URL}/logout`, {}, { withCredentials: true });
+  } catch (error) {
+    console.error("Logout API failed:", error);
+  } finally {
+    // dispatch(logout());
+    navigate("/user/login");
+  }
+};
+  const data = useSelector((state) => state.user);
+  console.log("Header user data:", data)
+
   return (
     <header className="w-full bg-[#3338a0] text-white shadow-xl sticky top-0 z-50 border-b border-white/10 backdrop-blur-md bg-opacity-95">
       <div className="w-full px-4 sm:px-8 lg:px-12 py-4">
         <div className="flex justify-between items-center">
-          
           {/* Brand / Logo */}
           <Link to="/User" className="flex items-center gap-2.5 group">
             <img src="/img/logo.png" alt="Logo" className="h-20 w-auto" />
@@ -56,13 +76,37 @@ const Header = ({ onSearch }) => {
               <FaHome className="text-xl group-hover:text-[#fcc61d] transition-colors" />
             </Link>
 
-            <Link 
-              to="/User/ProfileScreen" 
-              className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white transition-all border border-white/10 flex items-center justify-center group"
-              title="Profile"
-            >
-              <CgProfile className="text-xl group-hover:text-[#fcc61d] transition-colors" />
-            </Link>
+<div className="relative group">
+  <Link 
+    to="/User/ProfileScreen" 
+    className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white transition-all border border-white/10 flex items-center justify-center"
+    title="Profile"
+  >
+    <div className="text-xl h-7 w-7 rounded-full transition-colors overflow-hidden">
+      <img src="" alt="Profile" className="h-full w-full rounded-full object-cover" />
+    </div>
+  </Link>
+
+  {/* Dropdown */}
+  <div className="absolute right-0 top-full pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+    <div className="w-44 bg-[#3338a0] border border-white/10 rounded-xl shadow-xl overflow-hidden">
+      <Link
+        to="/User/ProfileScreen"
+        className="flex items-center gap-2 px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors"
+      >
+        <CgProfile className="text-[#fcc61d]" />
+        Profile
+      </Link>
+      <button
+        onClick={handleLogout}
+        className="w-full flex items-center gap-2 px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors text-left border-t border-white/10"
+      >
+        <FiLogOut className="text-[#fcc61d]" />
+        Logout
+      </button>
+    </div>
+  </div>
+</div>
 
             <Link 
               to="/User/CartScreen" 
